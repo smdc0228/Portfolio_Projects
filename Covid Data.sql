@@ -1,16 +1,16 @@
 
 -- Looking at all data 
-select *
-from [Portfolio Project].dbo.CovidDeaths
-order by 3,4
+SELECT *
+FROM [Portfolio Project].dbo.CovidDeaths
+ORDER BY 3,4
 
 -- Looking at Total Cases vs Total Deaths
 -- Shows likelihood of dying if you contract covid in your country
-select location, date, total_cases, total_deaths, (cast(total_deaths as float)/cast(total_cases as float))*100 
-as DeathPercentage
-from [Portfolio Project].dbo.CovidDeaths
-where location like '%philippines%'
-order by 1,2
+SELECT location, date, total_cases, total_deaths, (CAST(total_deaths AS float)/CAST(total_cases AS float))*100 
+	AS DeathPercentage
+FROM [Portfolio Project].dbo.CovidDeaths
+WHERE location LIKE '%philippines%'
+ORDER BY 1,2
 
 -- Looking at Total Cases vs Population
 -- Shows what percentage of population got COVID
